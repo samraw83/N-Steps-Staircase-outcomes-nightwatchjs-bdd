@@ -1,0 +1,46 @@
+{
+  "author": "Sandeep",
+  "license": "ISC",
+  "name": "sandeep_bdd",
+  "version": "1.0.0",
+  "description": "This Framework provides the number of possible outputs for a N Steps Staircase Problem",
+  "main": "cucumber.js",
+  "private": true,
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chromedriver": "^2.40.0",
+    "cli-mid-verbose": "^1.0.1",
+    "co": "4.6.0",
+    "combine-errors": "3.0.3",
+    "cucumber": "^4.2.1",
+    "geckodriver": "1.11.0",
+    "glob": "7.1.2",
+    "lodash.clonedeep": "4.5.0",
+    "mkdirp": "0.5.1",
+    "nightwatch-cucumber": "^9.1.2",
+    "npm-install-all": "^1.1.21",
+    "phantomjs": "2.1.7",
+    "phantomjs-prebuilt": "2.1.16",
+    "pify": "3.0.0",
+    "selenium-server": "3.12.0",
+    "tmp": "0.0.33"
+  },
+  "devDependencies": {
+    "nightwatch": "^0.9.21"
+  },
+  "scripts": {
+    "start": "test",
+    "start:chrome": "nightwatch --tag api --env chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samraw83/N-Steps-Staircase-outcomes-nightwatchjs-bdd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samraw83/N-Steps-Staircase-outcomes-nightwatchjs-bdd/issues"
+  },
+  "homepage": "https://github.com/samraw83/N-Steps-Staircase-outcomes-nightwatchjs-bdd#readme"
+}
