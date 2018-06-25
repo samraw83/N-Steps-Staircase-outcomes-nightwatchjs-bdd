@@ -1,30 +1,22 @@
-const {client}=require('nightwatch-cucumber')
+const assert = require('assert');
+const { Given, When, Then } = require('cucumber');
 
-module.exports=function(){
-    
-    this.When(/^User enters the staircase steps count as "([^"]*)"$/, function stairsCombination(stepsCount){
-    
-    var nWays = [];
-    nWays[0] = 1;
-    nWays[1] = 2;
+const Calculator = require('../../lib/NStepsCalculator');
 
-    for(var i = 2; i < stepsCount; i++) 
-        {
-            nWays[i] = nWays[i - 1] + nWays[i - 2];
-        }
+let calculator;
 
-    return nWays[stepsCount - 1];
+Given('The Number of Steps in staircase is {int}', function (N) {
     
-    });
+    calculator = new Calculator(N);
     
-    this.Then(/^Users gets the possible outcomes count as "([^"]*)"$/, function (){
-    var numOfWays = stairsCombination(10);
-    console.log(numOfWays);
+});
 
-    //Assert the output value is corrct (using chai module)
-    var outPutValue = chai.expect;
-    outPutValue(numOfWays).to.equal(89);
-
+When('Users gets the possible outcomes count as {int}', function (result) {
     
-    });
-}
+   calculator.combinations(result);
+});
+
+Then('The Combinations Result should be {int}', function (expected) {
+  
+  assert.equal(calculator.getResult(), expected)
+});

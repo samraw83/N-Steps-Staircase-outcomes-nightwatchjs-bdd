@@ -7,7 +7,7 @@
   "main": "cucumber.js",
   "private": true,
   "directories": {
-    "test": "test"
+    "test": "cucumber-js"
   },
   "dependencies": {
     "chai": "^4.1.2",
